@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Business Shopping Storefront</title>
+    <title>Small Business Storefront</title>
     <style>
         * { box-sizing: border-box; }
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #0f172a; background-color: #f8fafc; line-height: 1.5; }
@@ -12,11 +12,18 @@
 
         .promo-bar { background: #0f172a; color: #f8fafc; text-align: center; padding: 8px 15px; font-size: 13px; font-weight: 600; }
 
-        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 100; }
         .brand-logo { font-size: 20px; font-weight: 800; color: #0f172a; text-decoration: none; text-transform: uppercase; }
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { text-decoration: none; color: #475569; font-weight: 600; font-size: 14px; }
         .btn-cart { background: #2563eb; color: #ffffff !important; padding: 8px 16px; border-radius: 6px; font-weight: bold; }
+
+        /* DROPDOWN MENU STYLING */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 170px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); border-radius: 6px; z-index: 1; border: 1px solid #e2e8f0; top: 100%; left: 0; }
+        .dropdown-content a { color: #0f172a; padding: 12px 16px; text-decoration: none; display: block; font-size: 13px; font-weight: normal; margin: 0; }
+        .dropdown-content a:hover { background-color: #f1f5f9; color: #2563eb; }
+        .dropdown:hover .dropdown-content { display: block; }
 
         .container { max-width: 1150px; margin: 30px auto; padding: 0 20px; }
 
@@ -47,10 +54,22 @@
         🚚 Free Shipping on Orders Over $50 • Fast Standard Delivery
     </div>
 
+    <!-- HEADER WITH CATEGORIES DROPDOWN -->
     <header>
         <a href="index.html" class="brand-logo">🏬 Business Storefront</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
+            
+            <div class="dropdown">
+                <a href="category.html" style="cursor: pointer;">Categories ▾</a>
+                <div class="dropdown-content">
+                    <a href="category.html">Category 1</a>
+                    <a href="category.html">Category 2</a>
+                    <a href="category.html">Category 3</a>
+                    <a href="category.html">Category 4</a>
+                </div>
+            </div>
+
             <a href="category.html">Shop Catalog</a>
             <a href="category.html" class="btn-cart">🛒 Cart (0)</a>
         </div>
@@ -61,28 +80,28 @@
         <div class="hero-banner">
             <span class="section-label">[SECTION A: HERO BANNER]</span>
             <h1>Featured Store Headline & Collection</h1>
-            <p>Welcome to our online catalog. Browse through our organized category selections, view top featured items, or filter products easily.</p>
+            <p>Welcome to our online store. Browse our category selections below or view our top featured products.</p>
             <a href="category.html" class="btn-cta">Browse All Categories →</a>
         </div>
 
         <span class="section-label">[SECTION B: SHOP BY CATEGORY]</span>
-        <h2 style="margin-top: 0; margin-bottom: 20px;">Popular Categories</h2>
+        <h2 style="margin-top: 0; margin-bottom: 20px;">Explore Categories</h2>
         <div class="grid-4">
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category Image</div>
-                Apparel & Goods
+                <div class="img-placeholder">Image Box</div>
+                Category 1
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category Image</div>
-                Home & Decor
+                <div class="img-placeholder">Image Box</div>
+                Category 2
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category Image</div>
-                Digital Files / Plans
+                <div class="img-placeholder">Image Box</div>
+                Category 3
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category Image</div>
-                Gift Cards & Bundles
+                <div class="img-placeholder">Image Box</div>
+                Category 4
             </a>
         </div>
 
