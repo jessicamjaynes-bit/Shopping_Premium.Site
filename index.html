@@ -8,35 +8,28 @@
         * { box-sizing: border-box; }
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #0f172a; background-color: #f8fafc; line-height: 1.5; }
 
-        /* CLIENT HELPER SECTION BADGE */
         .section-label { display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
 
-        /* TOP PROMO BAR */
         .promo-bar { background: #0f172a; color: #f8fafc; text-align: center; padding: 8px 15px; font-size: 13px; font-weight: 600; }
 
-        /* HEADER & NAVIGATION */
-        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; sticky: top; z-index: 100; }
+        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
         .brand-logo { font-size: 20px; font-weight: 800; color: #0f172a; text-decoration: none; text-transform: uppercase; }
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { text-decoration: none; color: #475569; font-weight: 600; font-size: 14px; }
         .btn-cart { background: #2563eb; color: #ffffff !important; padding: 8px 16px; border-radius: 6px; font-weight: bold; }
 
-        /* MAIN CONTAINER */
         .container { max-width: 1150px; margin: 30px auto; padding: 0 20px; }
 
-        /* HERO BANNER BLOCK */
         .hero-banner { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 45px; margin-bottom: 40px; }
         .hero-banner h1 { font-size: 36px; margin: 0 0 10px 0; color: #0f172a; }
         .hero-banner p { color: #64748b; font-size: 16px; margin-bottom: 25px; max-width: 600px; }
         .btn-cta { display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; font-weight: bold; border-radius: 6px; font-size: 14px; }
 
-        /* CATEGORIES GRID */
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 45px; }
         .cat-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-decoration: none; color: #0f172a; font-weight: bold; text-align: center; }
         .cat-card:hover { border-color: #2563eb; }
         .img-placeholder { height: 110px; background: #f1f5f9; border-radius: 6px; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 12px; margin-bottom: 12px; }
 
-        /* PRODUCT CARDS GRID */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 45px; }
         .product-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; }
         .product-card h3 { margin: 0 0 6px 0; font-size: 16px; color: #0f172a; }
@@ -50,25 +43,21 @@
 </head>
 <body>
 
-    <!-- TOP ANNOUNCEMENT BAR -->
     <div class="promo-bar">
         🚚 Free Shipping on Orders Over $50 • Fast Standard Delivery
     </div>
 
-    <!-- MAIN HEADER NAVIGATION -->
     <header>
         <a href="index.html" class="brand-logo">🏬 Business Storefront</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="category.html">Shop Catalog</a>
-            <a href="category.html">Categories</a>
-            <a href="category.html" class="btn-cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+            <a href="category.html" class="btn-cart">🛒 Cart (0)</a>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- [SECTION A: HERO BANNER & MAIN CTA] -->
         <div class="hero-banner">
             <span class="section-label">[SECTION A: HERO BANNER]</span>
             <h1>Featured Store Headline & Collection</h1>
@@ -76,35 +65,30 @@
             <a href="category.html" class="btn-cta">Browse All Categories →</a>
         </div>
 
-
-        <!-- [SECTION B: FEATURED CATEGORY TILES] -->
         <span class="section-label">[SECTION B: SHOP BY CATEGORY]</span>
         <h2 style="margin-top: 0; margin-bottom: 20px;">Popular Categories</h2>
         <div class="grid-4">
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category 1 Image Box</div>
+                <div class="img-placeholder">Category Image</div>
                 Apparel & Goods
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category 2 Image Box</div>
+                <div class="img-placeholder">Category Image</div>
                 Home & Decor
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category 3 Image Box</div>
+                <div class="img-placeholder">Category Image</div>
                 Digital Files / Plans
             </a>
             <a href="category.html" class="cat-card">
-                <div class="img-placeholder">Category 4 Image Box</div>
+                <div class="img-placeholder">Category Image</div>
                 Gift Cards & Bundles
             </a>
         </div>
 
-
-        <!-- [SECTION C: FEATURED PRODUCTS GRID] -->
         <span class="section-label">[SECTION C: BEST SELLERS / FEATURED PRODUCTS]</span>
         <h2 style="margin-top: 0; margin-bottom: 20px;">Top Featured Products</h2>
         <div class="products-grid">
-            
             <div class="product-card">
                 <div class="img-placeholder" style="height: 160px;">Product Photo Box</div>
                 <h3>Featured Item A</h3>
@@ -114,7 +98,6 @@
                     <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
                 </div>
             </div>
-
             <div class="product-card">
                 <div class="img-placeholder" style="height: 160px;">Product Photo Box</div>
                 <h3>Featured Item B</h3>
@@ -124,29 +107,6 @@
                     <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="img-placeholder" style="height: 160px;">Product Photo Box</div>
-                <h3>Featured Item C</h3>
-                <p>Standard description placeholder for product specifications or features.</p>
-                <div class="price-row">
-                    <span class="price">$49.99</span>
-                    <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- [SECTION D: PROMO CALLOUT BANNER] -->
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 35px; text-align: center;">
-            <span class="section-label">[SECTION D: PROMOTIONAL CALLOUT]</span>
-            <h2 style="margin-top: 5px;">Join Our Store Email Club</h2>
-            <p style="color: #64748b; margin-bottom: 20px;">Receive early access to new product drops, discount codes, and weekly updates.</p>
-            <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" style="display: flex; gap: 10px; max-width: 450px; margin: 0 auto;">
-                <input type="email" placeholder="Enter your email address" required style="flex-grow: 1; padding: 11px; border: 1px solid #cbd5e1; border-radius: 6px;">
-                <button type="submit" class="btn-cta" style="border: none; cursor: pointer;">Subscribe</button>
-            </form>
         </div>
 
     </div>
