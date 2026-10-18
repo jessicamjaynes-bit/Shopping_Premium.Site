@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Order</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #1e293b; background-color: #f8fafc; display: flex; min-height: 100vh; }
+        aside { width: 270px; background: #0f172a; color: white; padding: 25px 18px; flex-shrink: 0; }
+        .brand-logo { font-size: 18px; font-weight: 800; color: #f8fafc; text-transform: uppercase; text-decoration: none; display: block; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+        .nav-group { display: flex; flex-direction: column; gap: 4px; }
+        .nav-link { padding: 10px 12px; color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 6px; }
+        .nav-link.active { background: #1e293b; color: #ffffff; }
+
+        main { flex-grow: 1; padding: 40px; max-width: 650px; }
+        .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 35px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #334155; }
+        .form-group input { width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+        .btn-track { background: #2563eb; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <a href="index.html" class="brand-logo">🏬 Store & Business</a>
+        <nav class="nav-group">
+            <a href="index.html" class="nav-link"><span>🏠 Home</span></a>
+            <a href="shop-all.html" class="nav-link"><span>🛍️ Shop All Catalog</span></a>
+            <a href="cat1.html" class="nav-link"><span>📂 Shop by Category</span></a>
+            <a href="deals.html" class="nav-link"><span>🔥 Best Sellers & Deals</span></a>
+            <a href="track-order.html" class="nav-link active"><span>📦 Track My Order</span></a>
+            <a href="locations.html" class="nav-link"><span>📍 Locations & Hours</span></a>
+            <a href="faq-shipping.html" class="nav-link"><span>ℹ️ FAQ & Shipping</span></a>
+            <a href="connect.html" class="nav-link"><span>💬 Connect & Contact</span></a>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="card">
+            <h1 style="margin-top: 0; font-size: 24px; color: #0f172a;">Track Your Package</h1>
+            <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Enter your Order Confirmation ID and Email Address to view current shipment status.</p>
+            
+            <form onsubmit="event.preventDefault(); alert('Searching for order status...');">
+                <div class="form-group">
+                    <label>Order Number / ID</label>
+                    <input type="text" placeholder="e.g., #ORD-10492" required>
+                </div>
+                <div class="form-group">
+                    <label>Billing Email Address</label>
+                    <input type="email" placeholder="jane@example.com" required>
+                </div>
+                <button type="submit" class="btn-track">Track Order Status →</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
