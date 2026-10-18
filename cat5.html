@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category 1 - Store Catalog</title>
+    <title>Category Catalog - Shopping Storefront</title>
     <style>
         * { box-sizing: border-box; }
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #0f172a; background-color: #f8fafc; line-height: 1.5; }
@@ -16,14 +16,12 @@
 
         .layout-container { max-width: 1150px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 240px 1fr; gap: 30px; }
 
-        /* SIDEBAR FILTERS */
         .filter-sidebar { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; }
         .filter-group { margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
         .filter-group h4 { margin: 0 0 10px 0; font-size: 14px; color: #0f172a; }
         .filter-option { display: block; font-size: 13px; color: #475569; margin-bottom: 8px; text-decoration: none; }
         .filter-option.active { font-weight: bold; color: #2563eb; }
 
-        /* MAIN PRODUCTS AREA */
         .page-header { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 25px; margin-bottom: 25px; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .product-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; }
@@ -46,73 +44,38 @@
 
     <div class="layout-container">
 
-        <!-- [SECTION E: SIDEBAR CATEGORY FILTERS] -->
+        <!-- [SECTION E: SIDEBAR FILTERS] -->
         <div class="filter-sidebar">
-            <span class="section-label">[SECTION E: CATEGORY MENU]</span>
-            
+            <span class="section-label">[SECTION E: FILTERS]</span>
             <div class="filter-group">
                 <h4>Categories</h4>
-                <a href="cat1.html" class="filter-option active">Category 1</a>
-                <a href="cat2.html" class="filter-option">Category 2</a>
-                <a href="cat3.html" class="filter-option">Category 3</a>
-                <a href="cat4.html" class="filter-option">Category 4</a>
-                <a href="cat5.html" class="filter-option">Category 5</a>
-            </div>
-
-            <div class="filter-group">
-                <h4>Price Filter</h4>
-                <a href="#" class="filter-option">Under $25</a>
-                <a href="#" class="filter-option">$25 to $50</a>
-                <a href="#" class="filter-option">$50 & Above</a>
+                <a href="category.html" class="filter-option active">All Products</a>
+                <a href="category.html" class="filter-option">Apparel & Goods</a>
+                <a href="category.html" class="filter-option">Home & Decor</a>
+                <a href="category.html" class="filter-option">Digital Files</a>
             </div>
         </div>
 
         <!-- MAIN CATEGORY CONTENT -->
         <div>
-
-            <!-- [SECTION F: CATEGORY HEADER] -->
             <div class="page-header">
                 <span class="section-label">[SECTION F: CATEGORY HEADER]</span>
-                <h1 style="margin: 0 0 5px 0; font-size: 26px;">Category 1 Products</h1>
-                <p style="margin: 0; color: #64748b; font-size: 14px;">Displaying all items and available options in Category 1.</p>
+                <h1 style="margin: 0 0 5px 0; font-size: 26px;">Store Catalog</h1>
+                <p style="margin: 0; color: #64748b; font-size: 14px;">Browse items across our active collection.</p>
             </div>
 
-            <!-- [SECTION G: CATEGORY PRODUCT GRID] -->
             <span class="section-label">[SECTION G: PRODUCT GRID]</span>
             <div class="products-grid">
-
                 <div class="product-card">
                     <div class="img-placeholder">Product Photo Box</div>
-                    <h3 style="margin: 0 0 5px 0; font-size: 16px;">Cat 1 - Item A</h3>
+                    <h3 style="margin: 0 0 5px 0; font-size: 16px;">Catalog Item A</h3>
                     <p style="color: #64748b; font-size: 13px;">Item specification placeholder.</p>
                     <div class="price-row">
                         <span style="font-weight: bold;">$19.99</span>
                         <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
                     </div>
                 </div>
-
-                <div class="product-card">
-                    <div class="img-placeholder">Product Photo Box</div>
-                    <h3 style="margin: 0 0 5px 0; font-size: 16px;">Cat 1 - Item B</h3>
-                    <p style="color: #64748b; font-size: 13px;">Item specification placeholder.</p>
-                    <div class="price-row">
-                        <span style="font-weight: bold;">$29.99</span>
-                        <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="img-placeholder">Product Photo Box</div>
-                    <h3 style="margin: 0 0 5px 0; font-size: 16px;">Cat 1 - Item C</h3>
-                    <p style="color: #64748b; font-size: 13px;">Item specification placeholder.</p>
-                    <div class="price-row">
-                        <span style="font-weight: bold;">$34.99</span>
-                        <a href="product-detail.html" class="btn-add" style="text-decoration:none;">View Details</a>
-                    </div>
-                </div>
-
             </div>
-
         </div>
 
     </div>
