@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Shopping Storefront</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #0f172a; background-color: #f8fafc; line-height: 1.5; }
+
+        .section-label { display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px; }
+
+        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .brand-logo { font-size: 20px; font-weight: 800; color: #0f172a; text-decoration: none; text-transform: uppercase; }
+
+        .container { max-width: 950px; margin: 40px auto; padding: 0 20px; }
+        .product-wrapper { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 35px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+        .img-large { height: 280px; background: #f1f5f9; border-radius: 8px; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-weight: 600; margin-bottom: 15px; }
+        .price { font-size: 28px; font-weight: bold; color: #0f172a; margin: 15px 0; }
+
+        .btn-buy { background: #2563eb; color: white; border: none; padding: 14px; border-radius: 6px; font-weight: bold; font-size: 15px; width: 100%; cursor: pointer; }
+
+        @media (max-width: 700px) { .product-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand-logo">🏬 Business Storefront</a>
+        <div><a href="category.html" style="color: #475569; text-decoration: none; font-weight: 600;">← Back to Category</a></div>
+    </header>
+
+    <div class="container">
+        
+        <!-- [SECTION H: PRODUCT DETAIL VIEW] -->
+        <div class="product-wrapper">
+            <div>
+                <span class="section-label">[SECTION H: PHOTO GALLERY]</span>
+                <div class="img-large">Main Product Photo Box</div>
+            </div>
+
+            <div>
+                <span class="section-label">[SECTION I: PRODUCT BUY BOX]</span>
+                <h1 style="margin: 0; font-size: 28px;">Featured Item Product Title</h1>
+                <div class="price">$29.99</div>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 25px;">Detailed item description placeholder explaining material, dimensions, or features for this specific product.</p>
+
+                <button class="btn-buy" onclick="alert('Item added to cart!')">Add to Cart / Proceed to Checkout →</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
