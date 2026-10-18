@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Business Shopping Site - Home</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #1e293b; background-color: #f8fafc; display: flex; min-height: 100vh; }
+        
+        /* SIDEBAR NAVIGATION */
+        aside { width: 270px; background: #0f172a; color: white; padding: 25px 18px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; }
+        .brand-logo { font-size: 18px; font-weight: 800; color: #f8fafc; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; display: block; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+        
+        .nav-group { display: flex; flex-direction: column; gap: 4px; }
+        .nav-link { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: pointer; border: none; background: none; width: 100%; text-align: left; }
+        .nav-link:hover, .nav-link.active { background: #1e293b; color: #ffffff; }
+        
+        /* CATEGORY DROPDOWN MENU */
+        .dropdown-btn { background: #1e293b; color: #f8fafc; font-weight: 700; border: 1px solid #334155; margin: 4px 0; }
+        .submenu { display: none; flex-direction: column; gap: 3px; padding-left: 12px; margin-bottom: 6px; }
+        .submenu.show { display: flex; }
+        .submenu a { display: block; padding: 7px 12px; color: #94a3b8; text-decoration: none; font-size: 13px; font-weight: 500; border-radius: 4px; border-left: 2px solid #334155; }
+        .submenu a:hover, .submenu a.active-cat { color: #38bdf8; border-left-color: #38bdf8; background: #1e293b; }
+
+        /* SIDEBAR CART WIDGET */
+        .cart-widget { background: #1e293b; border: 1px solid #334155; padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
+        .cart-widget p { margin: 0 0 10px 0; font-size: 13px; color: #94a3b8; }
+        .btn-cart { width: 100%; background: #2563eb; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
+
+        /* MAIN CONTENT AREA */
+        main { flex-grow: 1; padding: 40px; max-width: 1050px; }
+        .hero-banner { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 45px; margin-bottom: 35px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .hero-banner h1 { font-size: 32px; color: #0f172a; margin-top: 0; margin-bottom: 12px; }
+        .hero-banner p { color: #64748b; font-size: 16px; margin-bottom: 25px; max-width: 650px; }
+        .btn-cta { display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; font-weight: bold; border-radius: 6px; }
+
+        /* CATEGORIES & QUICK LINKS GRID */
+        .section-title { font-size: 20px; color: #0f172a; margin-bottom: 18px; }
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .category-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-decoration: none; color: #0f172a; font-weight: bold; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+        .category-card:hover { transform: translateY(-3px); border-color: #2563eb; }
+        .cat-box-placeholder { height: 70px; background: #f1f5f9; border-radius: 6px; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 12px; margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            aside { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside>
+        <div>
+            <a href="index.html" class="brand-logo">🏬 Store & Business</a>
+            
+            <nav class="nav-group">
+                <a href="index.html" class="nav-link active"><span>🏠 Home</span></a>
+                <a href="shop-all.html" class="nav-link"><span>🛍️ Shop All Catalog</span></a>
+                
+                <!-- CATEGORY DROPDOWN -->
+                <button class="nav-link dropdown-btn" onclick="toggleDropdown()">
+                    <span>📂 Shop by Category</span>
+                    <span id="arrow">▲</span>
+                </button>
+                <div class="submenu show" id="shopSubmenu">
+                    <a href="cat1.html">Category 1</a>
+                    <a href="cat2.html">Category 2</a>
+                    <a href="cat3.html">Category 3</a>
+                    <a href="cat4.html">Category 4</a>
+                    <a href="cat5.html">Category 5</a>
+                </div>
+
+                <a href="deals.html" class="nav-link"><span>🔥 Best Sellers & Deals</span></a>
+                <a href="track-order.html" class="nav-link"><span>📦 Track My Order</span></a>
+                <a href="locations.html" class="nav-link"><span>📍 Locations & Hours</span></a>
+                <a href="faq-shipping.html" class="nav-link"><span>ℹ️ FAQ & Shipping</span></a>
+                <a href="connect.html" class="nav-link"><span>💬 Connect & Contact</span></a>
+            </nav>
+        </div>
+
+        <div class="cart-widget">
+            <p>🛒 Cart Items: <strong id="cartCount" style="color: white;">0</strong></p>
+            <button class="btn-cart" onclick="alert('Proceeding to checkout...')">View Cart / Checkout</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        <div class="hero-banner">
+            <h1>Welcome to Our Store</h1>
+            <p>Explore our catalog, check out top featured deals, track an existing order, or get in touch. Use the sidebar menu on the left to navigate between pages.</p>
+            <a href="shop-all.html" class="btn-cta">Browse Entire Catalog →</a>
+        </div>
+
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+            <a href="cat1.html" class="category-card">
+                <div class="cat-box-placeholder">Category 1 Box</div>
+                Category 1
+            </a>
+            <a href="cat2.html" class="category-card">
+                <div class="cat-box-placeholder">Category 2 Box</div>
+                Category 2
+            </a>
+            <a href="cat3.html" class="category-card">
+                <div class="cat-box-placeholder">Category 3 Box</div>
+                Category 3
+            </a>
+            <a href="cat4.html" class="category-card">
+                <div class="cat-box-placeholder">Category 4 Box</div>
+                Category 4
+            </a>
+            <a href="cat5.html" class="category-card">
+                <div class="cat-box-placeholder">Category 5 Box</div>
+                Category 5
+            </a>
+        </div>
+    </main>
+
+    <script>
+        function toggleDropdown() {
+            const submenu = document.getElementById('shopSubmenu');
+            const arrow = document.getElementById('arrow');
+            submenu.classList.toggle('show');
+            arrow.textContent = submenu.classList.contains('show') ? '▲' : '▼';
+        }
+    </script>
+</body>
+</html>
