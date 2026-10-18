@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Products</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #1e293b; background-color: #f8fafc; display: flex; min-height: 100vh; }
+        
+        aside { width: 270px; background: #0f172a; color: white; padding: 25px 18px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; }
+        .brand-logo { font-size: 18px; font-weight: 800; color: #f8fafc; text-transform: uppercase; text-decoration: none; display: block; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+        .nav-group { display: flex; flex-direction: column; gap: 4px; }
+        .nav-link { padding: 10px 12px; color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 6px; }
+        .nav-link.active { background: #1e293b; color: #ffffff; }
+
+        .cart-widget { background: #1e293b; border: 1px solid #334155; padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
+        .btn-cart { width: 100%; background: #2563eb; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
+
+        main { flex-grow: 1; padding: 40px; max-width: 1050px; }
+        .page-header { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 25px; margin-bottom: 30px; }
+        .page-header h1 { margin: 0 0 5px 0; color: #0f172a; font-size: 26px; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .product-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; }
+        .img-placeholder { height: 140px; background: #f1f5f9; border-radius: 6px; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px; margin-bottom: 15px; }
+        .product-card h3 { margin: 0 0 6px 0; font-size: 16px; color: #0f172a; }
+        .product-card p { margin: 0 0 15px 0; color: #64748b; font-size: 13px; flex-grow: 1; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-weight: bold; font-size: 16px; color: #0f172a; }
+        .btn-add { background: #2563eb; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px; }
+
+        @media (max-width: 768px) { body { flex-direction: column; } aside { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div>
+            <a href="index.html" class="brand-logo">🏬 Store & Business</a>
+            <nav class="nav-group">
+                <a href="index.html" class="nav-link"><span>🏠 Home</span></a>
+                <a href="shop-all.html" class="nav-link active"><span>🛍️ Shop All Catalog</span></a>
+                <a href="cat1.html" class="nav-link"><span>📂 Shop by Category</span></a>
+                <a href="deals.html" class="nav-link"><span>🔥 Best Sellers & Deals</span></a>
+                <a href="track-order.html" class="nav-link"><span>📦 Track My Order</span></a>
+                <a href="locations.html" class="nav-link"><span>📍 Locations & Hours</span></a>
+                <a href="faq-shipping.html" class="nav-link"><span>ℹ️ FAQ & Shipping</span></a>
+                <a href="connect.html" class="nav-link"><span>💬 Connect & Contact</span></a>
+            </nav>
+        </div>
+
+        <div class="cart-widget">
+            <p style="margin: 0 0 10px 0; font-size: 13px; color: #94a3b8;">🛒 Cart Items: <strong id="cartCount" style="color: white;">0</strong></p>
+            <button class="btn-cart" onclick="alert('Proceeding to checkout...')">View Cart / Checkout</button>
+        </div>
+    </aside>
+
+    <main>
+        <div class="page-header">
+            <h1>All Products</h1>
+            <p style="margin:0; color:#64748b;">Browse through the entire collection across all categories.</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="img-placeholder">Product Image Box</div>
+                <h3>Catalog Item 1</h3>
+                <p>Standard item description box placeholder.</p>
+                <div class="price-row">
+                    <span class="price">$19.99</span>
+                    <button class="btn-add" onclick="addCart()">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-placeholder">Product Image Box</div>
+                <h3>Catalog Item 2</h3>
+                <p>Standard item description box placeholder.</p>
+                <div class="price-row">
+                    <span class="price">$29.99</span>
+                    <button class="btn-add" onclick="addCart()">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-placeholder">Product Image Box</div>
+                <h3>Catalog Item 3</h3>
+                <p>Standard item description box placeholder.</p>
+                <div class="price-row">
+                    <span class="price">$39.99</span>
+                    <button class="btn-add" onclick="addCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let count = 0;
+        function addCart() { count++; document.getElementById('cartCount').textContent = count; }
+    </script>
+</body>
+</html>
